@@ -12,6 +12,7 @@ public class PlayerManager : MonoBehaviour {
     bool door1Open = false;
     bool door2Open = false;
     public GameObject EndUI;
+    public GameObject WinUI;
 
 
     private void OnGUI()
@@ -28,9 +29,14 @@ public class PlayerManager : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
+        GameObject BossCheck = GameObject.Find("CowBoss");
+        if (BossCheck == null) {
+            WinUI.SetActive(true);
+        }
+        //Debug.Log(BossCheck);
 		GameObject[] playerUnits = GameObject.FindGameObjectsWithTag("PlayerUnit");
-        Debug.Log(playerUnits.Length);
-        if (playerUnits.Length <= 5) {RTSGameManager.EndGame(EndUI);}
+        //Debug.Log(playerUnits.Length);
+        if (playerUnits.Length <= 0) {RTSGameManager.EndGame(EndUI);}
         //Detect if mouse is down
         if(Input.GetMouseButtonDown(0))
         {

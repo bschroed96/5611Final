@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdab68f085fd0432c8372fa595671029, type: 3}
   m_Name: CowBoss
   m_EditorClassIdentifier: 
-  attackRange: 20
-  attackSpeed: 4
-  attackDamage: 25
-  health: 1500
+  attackRange: 70
+  attackSpeed: 3
+  attackDamage: 50
+  health: 15
